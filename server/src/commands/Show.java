@@ -54,7 +54,7 @@ public class Show implements Command, Serializable {
             public int compare(Map.Entry<Integer, Route> a, Map.Entry<Integer, Route> b) {
                 var coordA = a.getValue().getCoordinates();
                 var coordB = b.getValue().getCoordinates();
-                if (!coordA.getX().equals(coordB.getX())) { // x not equals
+                if (!coordA.getX().equals(coordB.getX())) { // x1 not equals x2
                     return coordA.getX().compareTo(coordB.getX());
                 }
                 return coordA.getY().compareTo(coordB.getY());

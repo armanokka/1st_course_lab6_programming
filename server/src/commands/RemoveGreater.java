@@ -43,6 +43,12 @@ public class RemoveGreater implements Command, Serializable {
     public String execute(CollectionHandler collectionHandler, String[] args, BufferedReader reader) {
         Hashtable<Integer, Route> collection = collectionHandler.getCollection();
 
+        /*
+        Hashtable:
+            key1 -> route1
+                route.getKey() = key1
+            key2 -> route2
+         */
         try {
             var key = Integer.parseInt(args[1]);
             for (var entry: collection.entrySet()) {

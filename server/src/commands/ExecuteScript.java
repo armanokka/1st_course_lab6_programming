@@ -66,13 +66,14 @@ public class ExecuteScript implements Command, Serializable {
 
             String line;
             while ((line = reader.readLine()) != null) {
+                System.out.println(line);
                 out += "\n$ " + line;
-                CommandHandler.process(line, collectionHandler, reader);
-                out += "\n";
+                out += "\n" + CommandHandler.process(line, collectionHandler, reader);
             }
             isr.close();
 
         } catch (IOException e){
+            out = e.toString();
         }
         handledScripts.remove(scriptName);
         return out;

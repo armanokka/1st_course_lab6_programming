@@ -43,20 +43,6 @@ public class Route implements Comparable<Route>, Serializable {
         return usedIds.get(usedIds.size()-1)+1;
     }
 
-
-    /**
-     * Generates a valid key for the Route.
-     *
-     * @return a valid key for the Route
-     */
-    private Integer generateValidKey() {
-        if (usedKeys.isEmpty()) {
-            return 1;
-        }
-        Collections.sort(usedKeys);
-        return usedKeys.get(usedKeys.size()-1)+1;
-    }
-
     /**
      * Removes a used ID from the list of used IDs.
      *
@@ -85,10 +71,10 @@ public class Route implements Comparable<Route>, Serializable {
     /**
      * Constructs a Route object with automatically generated ID and filled fields.
      */
-    public Route(){
-        this.id = generateValidId();
-        fillFields();
-    }
+//    public Route(){
+//        this.id = generateValidId();
+//        fillFields();
+//    }
 
     /**
      * Constructs a Route object with a specified key, if it doesn't already exist, and filled fields.
